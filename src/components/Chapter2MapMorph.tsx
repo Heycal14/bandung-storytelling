@@ -14,7 +14,7 @@ export default function Chapter2MapMorph() {
   // Crossfade satellite/landcover map from 1990 (0) to 2024 (1)
   const map2024Opacity = useTransform(scrollYProgress, [0.2, 0.7], [0, 1]);
   const lossOverlayOpacity = useTransform(scrollYProgress, [0.4, 0.75], [0, 0.3]);
-  const yearLabel = useTransform(scrollYProgress, (pos) => (pos < 0.5 ? "1990" : "2024"));
+  const yearLabel = useTransform(scrollYProgress, (pos: number): string => (pos < 0.5 ? "1990" : "2024"));
 
   const textOpacity = useTransform(scrollYProgress, [0.05, 0.25, 0.75, 0.95], [0, 1, 1, 0]);
   const textY = useTransform(scrollYProgress, [0.05, 0.25, 0.75, 0.95], [24, 0, 0, -16]);
